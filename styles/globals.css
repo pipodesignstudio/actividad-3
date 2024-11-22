@@ -20,55 +20,48 @@
 }
 
 body {
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow-x: hidden;
-  font-family: "Roboto",  sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   background-color: var(--background);
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.6 rem;
-    color: var(--surface-900);
-    font-weight: 700;
+h1,
+h2,
+h3 {
+  line-height: 1.6 rem;
+  color: var(--surface-900);
+  font-weight: 700;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.75rem;
-}
-
-h4 {
-    font-size: 1.5rem;
-}
-
-h5 {
-    font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 p {
-    line-height: 1.2rem;
-    color: var(--surface-600);
+  line-height: 1.2rem;
+  color: var(--surface-600);
 }
 
 section {
-    padding: 40px 0;
+  padding: 40px 0;
 }
 
 .wrapper {
-    margin: 0 auto;
-    padding: 0 20px; 
-    max-width: 1280px; /* Estábamos en la clase */
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1280px; /* Estábamos en la clase */
 }
 
 /* ------------- Componentes ------------- */
@@ -103,28 +96,62 @@ section {
 /* ------------- Tags ------------- */
 .tag {
   color: white;
+  width: auto;
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: 600;
   font-size: 0.75 rem;
-  
 }
-
 
 .tag-success {
-    background-color: var(--success-color);
+  background-color: var(--success-color);
 }
 
+.tag-danger {
+  background-color: var(--danger-color);
+}
+
+.tag-info {
+  background-color: var(--primary-color);
+}
 
 /* ------------- Card ------------- */
 
-.card{
-    background-color: var(--surface-0);
-    border: solid 1px var(--surface-300);
-    border-radius: var(--border-radius);
-    padding: 12px;
+.card {
+  background-color: var(--surface-0);
+  border: solid 1px var(--surface-300);
+  border-radius: var(--border-radius);
+  padding: 12px;
 }
 
+/* ------------- Form ------------- */
+
+.form-group {
+  margin: 10px 0;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--surface-800);
+  background-color: #fff;
+  border: 1px solid var(--surface-300); /* Color gris claro */
+  border-radius: 0.375rem; /* Radio de borde igual a 8px */
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus */
+.form-control:focus {
+  outline: none;
+  border-color: var(
+    --primary-color-hover
+  ); /* Color azul para el borde al hacer foco */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Sombra alrededor del input */
+}
 
 /* ------------- Areas ------------- */
 /* ------------- Header components ------------- */
@@ -134,7 +161,7 @@ header {
   padding: 10px 20px;
   .navbar {
     max-width: 1280px;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -163,9 +190,9 @@ header {
       }
     }
     @media (max-width: 970px) {
-        .menu {
-            display: none;
-          }
+      .menu {
+        display: none;
+      }
     }
   }
 }
@@ -175,121 +202,165 @@ header {
   flex-wrap: wrap;
   gap: 20px;
 }
+.blue-container {
+  background-color: #dbeafe;
+  padding: 60px;
+}
 
 .hero-placeholder {
   position: relative;
   width: 33.33%;
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
   }
 }
 
 .discount-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 .description {
-  flex: 1; 
+  flex: 1;
   flex-direction: column;
   justify-content: left;
   gap: 10px;
 }
 
-
 .section-prefix {
-    text-transform: uppercase;
-    color: var(--danger-color);
-    font-weight: 700;
+  text-transform: uppercase;
+  color: var(--danger-color);
+  font-weight: 700;
 }
 
 .pricing-area {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
 }
 
 .features-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .feature-item {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
     gap: 10px;
+    width: calc(33.333% - 10px);
+    box-sizing: border-box;
 
-    .feature-item {
-        display: flex;
-        flex-direction: row;
-        align-items: start;
-        gap: 10px;
-        width: calc(33.333% - 10px);
-        box-sizing: border-box;
-
-        .feature-item-icon {
-            color: var(--surface-600);
-        }
-
-        .feature-item-text {
-            flex-grow: 1;
-            color: var(--surface-600);
-        }
+    .feature-item-icon {
+      color: var(--surface-600);
     }
+
+    .feature-item-text {
+      flex-grow: 1;
+      color: var(--surface-600);
+    }
+  }
 }
 
 /* ------------- Related ------------- */
 
 .accesories-area {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    gap: 10px;
-    .card {
-        width: 25%;
-        margin: 0;
-    }
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  .card {
+    width: 25%;
+    margin: 0;
+  }
 }
 
 .card-placeholder {
-    aspect-ratio: 2 / 1; 
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-    }
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  
+}
 
+/* ------------- Sroteo ------------- */
+
+.sorteo-description {
+  flex: 1;
+  flex-direction: column;
+  justify-content: left;
+  gap: 10px;
+}
+
+.sorteo-form-area {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 10px;
+}
+
+.sorteo-form > .form-group:last-child {
+  margin-top: 20px;
+}
 
 /* ------------- Media Queries ------------- */
 
+footer {
+  border-top: solid 1px var(--surface-300);
+  padding: 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 1.2rem;
+    color: var(--surface-800);
+    font-weight: 700;
+  }
+}
+
+/* ------------- Media Queries ------------- */
 
 @media (max-width: 970px) {
-    .container {
-      flex-direction: column; 
-    }
-    .hero-placeholder,
-    .description {
-      width: 100%; 
-    }
-    .features-area {
-        .feature-item {
-            /* NOTA: Meto -10px teniendo en cuenta el gap del area para forzarlo a que quepa según diseño */
-            width: calc(50% - 10px);
-        }
-    }
-    .accesories-area {
-        flex-direction: column;
-        gap: 10px;
-        .card {
-            /* NOTA: -30 =  Gap + padding global */
-            width: calc(100% - 30px);
-        }
+  .container {
+    flex-direction: column;
+  }
+  .blue-container {
+    padding: 20px;
+  }
+  .hero-placeholder,
+  .sorteo-form-area,
+  .sorteo-description,
+  .description {
+    width: 100%;
+  }
+  .features-area {
+    .feature-item {
+      /* NOTA: Meto -10px teniendo en cuenta el gap del area para forzarlo a que quepa según diseño */
+      width: calc(50% - 10px);
     }
   }
+  .accesories-area {
+    flex-direction: column;
+    gap: 10px;
+    .card {
+      /* NOTA: -30 =  Gap + padding global */
+      width: calc(100% - 30px);
+    }
+  }
+}
